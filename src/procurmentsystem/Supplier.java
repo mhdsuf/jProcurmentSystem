@@ -163,17 +163,6 @@ public class Supplier extends InteractionsWithTable{
     }
 
     @Override
-    protected boolean update(String columnName, String oldValue, String newValue) {
-        try {
-            table.updateRow(table.getRowIndex(columnName, (x) -> x.equals(oldValue)), columnName, newValue);
-            return true;
-        } catch(ValueNotFound e){
-            System.out.println("ID not found.");
-            return false;
-        }
-    }
-
-    @Override
     public String toString() {
         return String.format("%-10s | %-12s | %-15s",
                 ID, supplierName, supplierContact);

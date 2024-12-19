@@ -251,17 +251,6 @@ public class Item extends InteractionsWithTable {
     }
 
     @Override
-    protected boolean update(String columnName, String oldValue, String newValue) {
-        try {
-            table.updateRow(table.getRowIndex(columnName, (x) -> x.equals(oldValue)), columnName, newValue);
-            return true;
-        } catch (ValueNotFound e) {
-            System.out.println("ID not found.");
-            return false;
-        }
-    }
-
-    @Override
     public String toString() {
         return String.format("%-5s | %-15s | %-20s | %,6d | %8.2f | %3d | %-10s | %8.2f",
                 ID, itemName, itemDesc, itemQuantity, pricePerUnit, moq,

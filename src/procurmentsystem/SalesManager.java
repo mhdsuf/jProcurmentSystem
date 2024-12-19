@@ -4,15 +4,15 @@ import procurmentsystem.Table.Table;
 
 import java.io.FileNotFoundException;
 
-public class FinancialManager extends User {
+public class SalesManager extends User {
 
-    public FinancialManager (String id, String email, String password, String firstName, String lastName) {
+    public SalesManager(String id, String email, String password, String firstName, String lastName) {
         this.ID = id;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.role = Role.FinancialManager;
+        this.role = Role.SalesManager;
         try {
             this.table = new Table("src/files/users.csv");
         } catch (FileNotFoundException e) {
@@ -20,13 +20,13 @@ public class FinancialManager extends User {
         }
     }
 
-    public FinancialManager ( String email, String password, String firstName, String lastName) throws FileNotFoundException {
+    public SalesManager( String email, String password, String firstName, String lastName) throws FileNotFoundException {
         this.ID = this.generateID();
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.role = Role.FinancialManager;
+        this.role = Role.SalesManager;
         try {
             this.table = new Table("src/files/users.csv");
         } catch (FileNotFoundException e) {
@@ -34,4 +34,3 @@ public class FinancialManager extends User {
         }
     }
 }
-
